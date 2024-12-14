@@ -7,10 +7,10 @@ import { FormData } from "./types";
 
 const initialData: FormData = {
   name: "",
-  countries: [
+  dists: [
     {
-      country: "",
-      percentage: 0,
+      country: "France",
+      percentage: 50,
     },
   ],
 };

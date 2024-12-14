@@ -1,12 +1,12 @@
-import React from 'react';
-import { Autocomplete, TextField } from '@mui/material';
-import { withJsonFormsControlProps } from '@jsonforms/react';
-import { CountryData } from '../../types';
-import { countries } from '../../data/countries';
-import { renderCountryOption } from './CountryOption';
+import React from "react";
+import { Autocomplete, TextField } from "@mui/material";
+import { withJsonFormsControlProps } from "@jsonforms/react";
+import { CountryData } from "../../types";
+import { countries } from "../../data/countries";
+import { renderCountryOption } from "./CountryOption";
 
 const CountryAutocomplete = ({ data, path, handleChange, errors }: any) => {
-  const currentCountry = countries.find(c => c.code === data);
+  const currentCountry = countries.find((c) => c.name === data);
 
   return (
     <Autocomplete
@@ -17,13 +17,13 @@ const CountryAutocomplete = ({ data, path, handleChange, errors }: any) => {
       renderInput={(params) => (
         <TextField
           {...params}
-          label="Country"
+          label='Country'
           error={errors?.length > 0}
           helperText={errors}
         />
       )}
       onChange={(_, newValue) => {
-        handleChange(path, newValue?.code || '');
+        handleChange(path, newValue?.name || "");
       }}
     />
   );

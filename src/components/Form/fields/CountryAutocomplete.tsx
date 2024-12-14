@@ -1,7 +1,7 @@
-import React from 'react';
-import { Autocomplete, TextField } from '@mui/material';
-import { countries } from '../../../data/countries';
-import { CountryOption } from './CountryOption';
+import React from "react";
+import { Autocomplete, TextField } from "@mui/material";
+import { countries } from "../../../data/countries";
+import { CountryOption } from "./CountryOption";
 
 interface CountryAutocompleteProps {
   data: string;
@@ -17,10 +17,10 @@ export const CountryAutocomplete: React.FC<CountryAutocompleteProps> = ({
   path,
   handleChange,
   errors,
-  label = 'Country',
-  required = false
+  label = "Country",
+  required = false,
 }) => {
-  const currentCountry = countries.find(c => c.code === data);
+  const currentCountry = countries.find((c) => c.name === data);
 
   return (
     <Autocomplete
@@ -40,9 +40,9 @@ export const CountryAutocomplete: React.FC<CountryAutocompleteProps> = ({
         />
       )}
       onChange={(_, newValue) => {
-        handleChange(path, newValue?.code || '');
+        handleChange(path, newValue?.name || "");
       }}
-      isOptionEqualToValue={(option, value) => option.code === value.code}
+      isOptionEqualToValue={(option, value) => option.name === value.name}
     />
   );
 };

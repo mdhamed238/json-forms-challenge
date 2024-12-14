@@ -194,3 +194,7 @@ export const countries = [
   { code: "ZM", name: "Zambie" },
   { code: "ZW", name: "Zimbabwe" },
 ] as const;
+
+export type CountryCode = (typeof countries)[number]["code"];
+
+export type CountryName = (typeof countries)[number]["name"];

@@ -4,7 +4,7 @@ import { withJsonFormsControlProps } from "@jsonforms/react";
 import { countries } from "../data/countries";
 
 const CountryAutocomplete = ({ data, path, handleChange, errors }: any) => {
-  const currentCountry = countries.find((c) => c.code === data);
+  const currentCountry = countries.find((c) => c.name === data);
 
   return (
     <Autocomplete
@@ -33,7 +33,7 @@ const CountryAutocomplete = ({ data, path, handleChange, errors }: any) => {
         />
       )}
       onChange={(_, newValue) => {
-        handleChange(path, newValue?.code || "");
+        handleChange(path, newValue?.name || "");
       }}
     />
   );

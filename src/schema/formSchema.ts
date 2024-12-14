@@ -1,34 +1,34 @@
-import { JsonSchema } from '@jsonforms/core';
+import { JsonSchema } from "@jsonforms/core";
 
 export const formSchema: JsonSchema = {
-  type: 'object',
+  type: "object",
   properties: {
     name: {
-      type: 'string',
-      title: 'Name',
-      minLength: 1
+      type: "string",
+      title: "Nom",
+      minLength: 1,
     },
-    countries: {
-      type: 'array',
-      title: 'Countries',
+    dists: {
+      type: "array",
+      title: "Distributions",
       minItems: 1,
       items: {
-        type: 'object',
+        type: "object",
         properties: {
           country: {
-            type: 'string',
-            title: 'Country'
+            type: "string",
+            title: "Country",
           },
           percentage: {
-            type: 'number',
-            title: 'Percentage',
+            type: "number",
+            title: "Percentage",
             minimum: 0,
-            maximum: 100
-          }
+            maximum: 100,
+          },
         },
-        required: ['country', 'percentage']
-      }
-    }
+        required: ["country", "percentage"],
+      },
+    },
   },
-  required: ['name', 'countries']
+  required: ["name", "dists"],
 };

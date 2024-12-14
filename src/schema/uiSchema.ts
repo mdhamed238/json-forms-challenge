@@ -6,15 +6,15 @@ export const uiSchema: UISchemaElement = {
     {
       type: "Control",
       scope: "#/properties/name",
-      label: "Name",
+      label: "Nom",
       options: {
         format: "text",
       },
     },
     {
       type: "Control",
-      scope: "#/properties/countries",
-      label: "Countries",
+      scope: "#/properties/dists",
+      label: "Distributions",
       options: {
         showSortButtons: false,
         detail: {

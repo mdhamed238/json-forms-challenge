@@ -1,16 +1,18 @@
+import { CountryCode, CountryName } from "../data/countries";
+
 export interface CountryData {
-  code: string;
-  name: string;
+  code: CountryCode;
+  name: CountryName;
 }
 
-export interface CountryEntry {
-  country: string;
+export interface DistsEntry {
+  country: CountryName;
   percentage: number;
 }
 
 export interface FormData {
   name: string;
-  countries: CountryEntry[];
+  dists: DistsEntry[];
 }
 
 export interface ValidationError {
